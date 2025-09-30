@@ -14,12 +14,12 @@ body {
   padding:0;
   line-height:1.6;
   scroll-behavior: smooth;
-  background:#FDF9F0;
+  background:#ffffff; /* Fundo branco */
 }
 
 /* Cabeçalho */
 header {
-  background: linear-gradient(135deg, #F5F5DC, #EDE6D6);
+  background: linear-gradient(135deg, #FDF9F0, #FDF9F0); /* Bege claro */
   color: #4A4A4A;
   text-align: center;
   padding: 80px 20px 40px 20px;
@@ -55,6 +55,7 @@ section {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  background: #ffffff; /* Fundo branco */
 }
 section.visible {
   opacity: 1;
@@ -147,6 +148,8 @@ section ul li:hover {
   flex-direction: column;
   gap: 10px;
   z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 .mini-menu a {
   background: #4A4A4A;
@@ -156,17 +159,14 @@ section ul li:hover {
   border-radius: 6px;
   font-size: 14px;
   text-align: center;
-  opacity: 0.85;
-  transition: opacity 0.3s, transform 0.3s;
 }
 .mini-menu a:hover {
-  opacity: 1;
   transform: translateX(-3px);
 }
 
 /* Footer */
 footer {
-  background:#EDE6D6;
+  background:#FDF9F0;
   color:#4A4A4A;
   text-align:center;
   padding:20px;
@@ -192,13 +192,11 @@ footer {
 </header>
 
 <main>
-<!-- Sobre -->
 <section id="sobre">
   <h2>Sobre a Zona Segura</h2>
   <p>A Zona Segura é especialista em segurança eletrônica em Brasília, oferecendo soluções completas para sua casa e empresa.</p>
 </section>
 
-<!-- Benefícios -->
 <section id="benefits">
   <h2>Por que escolher a Zona Segura?</h2>
   <ul>
@@ -209,7 +207,6 @@ footer {
   </ul>
 </section>
 
-<!-- Serviços -->
 <section id="servicos">
   <h2>Nossos Serviços</h2>
   <ul>
@@ -220,7 +217,6 @@ footer {
   </ul>
 </section>
 
-<!-- Garantias -->
 <section id="garantia">
   <h2>Garantias</h2>
   <ul>
@@ -229,7 +225,6 @@ footer {
   </ul>
 </section>
 
-<!-- Depoimentos -->
 <section id="depoimentos">
   <h2>Depoimentos</h2>
   <article>
@@ -240,7 +235,6 @@ footer {
   </article>
 </section>
 
-<!-- FAQ -->
 <section id="faq">
   <h2>Perguntas Frequentes</h2>
   <article>
@@ -257,7 +251,6 @@ footer {
   </article>
 </section>
 
-<!-- Galeria -->
 <section id="galeria">
   <h2>Galeria de Imagens</h2>
   <div class="gallery">
@@ -267,7 +260,6 @@ footer {
   </div>
 </section>
 
-<!-- Contato -->
 <section id="contato">
   <h2>Contato</h2>
   <p><strong>Telefone:</strong> <a href="tel:+5561991614382">(61) 99161-4382</a></p>
@@ -281,7 +273,7 @@ footer {
 </footer>
 
 <!-- Mini-menu flutuante -->
-<div class="mini-menu">
+<div class="mini-menu" id="miniMenu">
   <a href="#sobre">Sobre</a>
   <a href="#benefits">Benefícios</a>
   <a href="#servicos">Serviços</a>
@@ -313,6 +305,16 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   window.addEventListener("scroll", checkVisible);
   checkVisible();
+
+  // Mini-menu aparece após rolar 150px
+  const miniMenu = document.getElementById("miniMenu");
+  window.addEventListener("scroll", function() {
+    if (window.scrollY > 150) {
+      miniMenu.style.opacity = "1";
+    } else {
+      miniMenu.style.opacity = "0";
+    }
+  });
 });
 </script>
 
