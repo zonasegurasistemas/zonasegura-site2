@@ -115,9 +115,8 @@ section ul li:hover {
   z-index: 10000;
 }
 
-.floating-buttons a.telefone,
-.floating-buttons a.whatsapp,
-.floating-buttons a.instagram {
+.floating-buttons a {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,6 +141,27 @@ section ul li:hover {
 .floating-buttons a.telefone { background:#4A4A4A; }
 .floating-buttons a.whatsapp { background:#25D366; }
 .floating-buttons a.instagram { background:#E4405F; }
+
+/* Tooltips animados */
+.floating-buttons a .tooltip {
+  position: absolute;
+  right: 65px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.floating-buttons a:hover .tooltip {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
 
 footer {
   background:#FDF9F0;
@@ -241,9 +261,18 @@ footer {
 
 <!-- Botões flutuantes -->
 <div class="floating-buttons">
-  <a href="tel:+5561991614382" class="telefone" title="Ligue Agora"><i class="fas fa-phone"></i></a>
-  <a href="https://wa.me/61991614382" class="whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <a href="https://www.instagram.com/zonaseguraa/" class="instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="tel:+5561991614382" class="telefone" title="Ligue Agora">
+    <i class="fas fa-phone"></i>
+    <span class="tooltip">Ligue Agora</span>
+  </a>
+  <a href="https://wa.me/61991614382" class="whatsapp" target="_blank" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="tooltip">WhatsApp</span>
+  </a>
+  <a href="https://www.instagram.com/zonaseguraa/" class="instagram" target="_blank" title="Instagram">
+    <i class="fab fa-instagram"></i>
+    <span class="tooltip">Instagram</span>
+  </a>
 </div>
 
 <script>
