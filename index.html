@@ -77,7 +77,16 @@ header {
 }
 
 /* Seções */
-section { padding:60px 20px; }
+section {
+  padding:60px 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 section h2 { text-align:center; font-size:2.2em; margin-bottom:20px; color:#4A4A4A; }
 section ul { list-style:none; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
 section ul li { background:white; padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); width:250px; text-align:center; transition:transform 0.4s ease; }
@@ -257,6 +266,22 @@ footer { background:#F5F5DC; color:#4A4A4A; text-align:center; padding:20px; fon
   <a href="https://wa.me/61991614382" class="whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <a href="https://www.instagram.com/zonaseguraa" class="instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const sections = document.querySelectorAll("section");
+  function checkVisible() {
+    const windowBottom = window.innerHeight + window.scrollY;
+    sections.forEach(section => {
+      if (windowBottom > section.offsetTop + 100) {
+        section.classList.add("visible");
+      }
+    });
+  }
+  window.addEventListener("scroll", checkVisible);
+  checkVisible();
+});
+</script>
 
 </body>
 </html>
