@@ -104,7 +104,7 @@ section ul li:hover {
   transform: scale(1.05);
 }
 
-/* Botões flutuantes redondos à direita */
+/* Botões flutuantes de navegação à direita */
 .floating-buttons {
   position: fixed;
   right: 20px;
@@ -137,6 +137,38 @@ section ul li:hover {
 .floating-buttons a#servicos { background:#CFC4A3; color:#4A4A4A; }
 .floating-buttons a#garantia { background:#8B7D6B; }
 .floating-buttons a#contato { background:#25D366; }
+
+/* Botões sociais WhatsApp e Instagram */
+.social-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 250px; /* acima dos botões de navegação */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 10000;
+}
+.social-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+  opacity: 0.85;
+}
+.social-buttons a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  opacity: 1;
+}
+.whatsapp { background:#25D366; }
+.instagram { background:#E4405F; }
 
 footer {
   background:#FDF9F0;
@@ -234,12 +266,22 @@ footer {
   <p>&copy; 2025 Zona Segura.</p>
 </footer>
 
-<!-- Botões flutuantes -->
+<!-- Botões flutuantes de navegação -->
 <div class="floating-buttons">
   <a href="#sobre" id="sobre" title="Sobre"><i class="fas fa-info"></i></a>
   <a href="#servicos" id="servicos" title="Serviços"><i class="fas fa-tools"></i></a>
   <a href="#garantia" id="garantia" title="Garantia"><i class="fas fa-certificate"></i></a>
   <a href="#contato" id="contato" title="Contato"><i class="fas fa-phone"></i></a>
+</div>
+
+<!-- Botões flutuantes de WhatsApp e Instagram -->
+<div class="social-buttons">
+  <a href="https://wa.me/5561991614382" target="_blank" class="whatsapp" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://www.instagram.com/zonaseguraa" target="_blank" class="instagram" title="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
 </div>
 
 <script>
