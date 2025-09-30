@@ -111,10 +111,15 @@ section ul li:hover {
   bottom: 20px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 15px; /* espaçamento entre botões de navegação */
   z-index: 10000;
 }
-.floating-buttons a {
+
+/* Botões de navegação (Sobre, Serviços, Garantia, Contato) */
+.floating-buttons a#sobre,
+.floating-buttons a#servicos,
+.floating-buttons a#garantia,
+.floating-buttons a#contato {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,11 +133,31 @@ section ul li:hover {
   transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
   opacity: 0.85;
 }
+
+/* Botões sociais (WhatsApp e Instagram) */
+.floating-buttons a.whatsapp,
+.floating-buttons a.instagram {
+  margin-top: 30px; /* separa os sociais dos botões de navegação */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+  opacity: 0.85;
+}
+
 .floating-buttons a:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
   opacity: 1;
 }
+
 /* Cores dos botões de navegação */
 .floating-buttons a#sobre { background:#4A4A4A; }
 .floating-buttons a#servicos { background:#CFC4A3; color:#4A4A4A; }
@@ -238,57 +263,29 @@ footer {
   <p>&copy; 2025 Zona Segura.</p>
 </footer>
 
-<!-- Botões flutuantes de navegação + sociais -->
+<!-- Botões flutuantes -->
 <div class="floating-buttons">
-  <a href="#sobre" id="sobre" title="Sobre"><i class="fas fa-info"></i></a>
-  <a href="#servicos" id="servicos" title="Serviços"><i class="fas fa-tools"></i></a>
+  <!-- Navegação -->
+  <a href="#sobre" id="sobre" title="Sobre"><i class="fas fa-user"></i></a>
+  <a href="#servicos" id="servicos" title="Serviços"><i class="fas fa-cogs"></i></a>
   <a href="#garantia" id="garantia" title="Garantia"><i class="fas fa-certificate"></i></a>
   <a href="#contato" id="contato" title="Contato"><i class="fas fa-phone"></i></a>
-  <a href="https://wa.me/5561991614382" target="_blank" class="whatsapp" title="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <a href="https://www.instagram.com/zonaseguraa" target="_blank" class="instagram" title="Instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
+  <!-- Sociais -->
+  <a href="https://wa.me/61991614382" class="whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.instagram.com/zonaseguraa/" class="instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const sections = document.querySelectorAll("section");
-  const buttons = document.querySelectorAll(".floating-buttons a");
-
   function checkVisible() {
-    const windowTop = window.scrollY;
-    const windowBottom = window.innerHeight + window.scrollY;
-
+    let windowBottom = window.innerHeight + window.scrollY;
     sections.forEach(section => {
       if (windowBottom > section.offsetTop + 100) {
         section.classList.add("visible");
       }
     });
-
-    let currentSectionId = "";
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 80;
-      const sectionBottom = sectionTop + section.offsetHeight;
-      if (windowTop >= sectionTop && windowTop < sectionBottom) {
-        currentSectionId = section.id;
-      }
-    });
-
-    buttons.forEach(btn => {
-      if (btn.id === currentSectionId) {
-        btn.style.transform = "scale(1.2)";
-        btn.style.opacity = "1";
-        btn.style.boxShadow = "0 6px 14px rgba(0,0,0,0.4)";
-      } else if (!btn.classList.contains("whatsapp") && !btn.classList.contains("instagram")) {
-        btn.style.transform = "scale(1)";
-        btn.style.opacity = "0.85";
-        btn.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
-      }
-    });
   }
-
   window.addEventListener("scroll", checkVisible);
   checkVisible();
 });
