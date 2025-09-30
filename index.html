@@ -106,7 +106,7 @@ section ul li:hover {
   transform: scale(1.05);
 }
 
-/* Botões flutuantes direito discretos */
+/* Botões flutuantes direito */
 .floating-buttons {
   position: fixed;
   right: 20px;
@@ -137,6 +137,32 @@ section ul li:hover {
 .phone { background-color: #CFC4A3; color:#4A4A4A; }
 .whatsapp { background-color: #25D366; }
 .instagram { background-color: #E4405F; }
+
+/* Mini-menu flutuante (links para seções) */
+.mini-menu {
+  position: fixed;
+  right: 20px;
+  bottom: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10000;
+}
+.mini-menu a {
+  background: #4A4A4A;
+  color: #FDF9F0;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0.85;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.mini-menu a:hover {
+  opacity: 1;
+  transform: translateX(-3px);
+}
 
 /* Footer */
 footer {
@@ -253,6 +279,18 @@ footer {
 <footer>
   <p>&copy; 2025 Zona Segura.</p>
 </footer>
+
+<!-- Mini-menu flutuante -->
+<div class="mini-menu">
+  <a href="#sobre">Sobre</a>
+  <a href="#benefits">Benefícios</a>
+  <a href="#servicos">Serviços</a>
+  <a href="#garantia">Garantia</a>
+  <a href="#depoimentos">Depoimentos</a>
+  <a href="#faq">FAQ</a>
+  <a href="#galeria">Galeria</a>
+  <a href="#contato">Contato</a>
+</div>
 
 <!-- Botões flutuantes direito -->
 <div class="floating-buttons">
