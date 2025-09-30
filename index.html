@@ -254,6 +254,22 @@ footer { background:#F5F5DC; color:#4A4A4A; text-align:center; padding:20px; fon
 </div>
 
 <script>
+// Rolagem suave para menu
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      window.scrollTo({
+        top: targetSection.offsetTop - document.querySelector('nav').offsetHeight,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Animação de seções ao aparecer
 document.addEventListener("DOMContentLoaded", function() {
   const sections = document.querySelectorAll("section");
   function checkVisible() {
