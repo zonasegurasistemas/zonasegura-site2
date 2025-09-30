@@ -104,7 +104,7 @@ section ul li:hover {
   transform: scale(1.05);
 }
 
-/* Botões flutuantes de navegação à direita */
+/* Botões flutuantes à direita (interação + sociais) */
 .floating-buttons {
   position: fixed;
   right: 20px;
@@ -133,42 +133,14 @@ section ul li:hover {
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
   opacity: 1;
 }
+/* Cores dos botões de navegação */
 .floating-buttons a#sobre { background:#4A4A4A; }
 .floating-buttons a#servicos { background:#CFC4A3; color:#4A4A4A; }
 .floating-buttons a#garantia { background:#8B7D6B; }
 .floating-buttons a#contato { background:#25D366; }
-
-/* Botões sociais WhatsApp e Instagram */
-.social-buttons {
-  position: fixed;
-  right: 20px;
-  bottom: 250px; /* acima dos botões de navegação */
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  z-index: 10000;
-}
-.social-buttons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  color: white;
-  font-size: 22px;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
-  opacity: 0.85;
-}
-.social-buttons a:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  opacity: 1;
-}
-.whatsapp { background:#25D366; }
-.instagram { background:#E4405F; }
+/* Cores dos botões sociais */
+.floating-buttons a.whatsapp { background:#25D366; }
+.floating-buttons a.instagram { background:#E4405F; }
 
 footer {
   background:#FDF9F0;
@@ -266,16 +238,12 @@ footer {
   <p>&copy; 2025 Zona Segura.</p>
 </footer>
 
-<!-- Botões flutuantes de navegação -->
+<!-- Botões flutuantes de navegação + sociais -->
 <div class="floating-buttons">
   <a href="#sobre" id="sobre" title="Sobre"><i class="fas fa-info"></i></a>
   <a href="#servicos" id="servicos" title="Serviços"><i class="fas fa-tools"></i></a>
   <a href="#garantia" id="garantia" title="Garantia"><i class="fas fa-certificate"></i></a>
   <a href="#contato" id="contato" title="Contato"><i class="fas fa-phone"></i></a>
-</div>
-
-<!-- Botões flutuantes de WhatsApp e Instagram -->
-<div class="social-buttons">
   <a href="https://wa.me/5561991614382" target="_blank" class="whatsapp" title="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
@@ -285,7 +253,6 @@ footer {
 </div>
 
 <script>
-// Animação de seções e destaque de botão ativo
 document.addEventListener("DOMContentLoaded", function() {
   const sections = document.querySelectorAll("section");
   const buttons = document.querySelectorAll(".floating-buttons a");
@@ -294,16 +261,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const windowTop = window.scrollY;
     const windowBottom = window.innerHeight + window.scrollY;
 
-    sections.forEach((section, index) => {
+    sections.forEach(section => {
       if (windowBottom > section.offsetTop + 100) {
         section.classList.add("visible");
       }
     });
 
-    // Destacar botão da seção atual
     let currentSectionId = "";
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 80; 
+      const sectionTop = section.offsetTop - 80;
       const sectionBottom = sectionTop + section.offsetHeight;
       if (windowTop >= sectionTop && windowTop < sectionBottom) {
         currentSectionId = section.id;
@@ -315,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function() {
         btn.style.transform = "scale(1.2)";
         btn.style.opacity = "1";
         btn.style.boxShadow = "0 6px 14px rgba(0,0,0,0.4)";
-      } else {
+      } else if (!btn.classList.contains("whatsapp") && !btn.classList.contains("instagram")) {
         btn.style.transform = "scale(1)";
         btn.style.opacity = "0.85";
         btn.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
