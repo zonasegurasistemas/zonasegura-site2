@@ -13,11 +13,11 @@ body {
   padding:0;
   line-height:1.6;
   scroll-behavior: smooth;
-  background:#ffffff; /* fundo branco */
+  background:#ffffff;
 }
 
 header {
-  background: linear-gradient(135deg, #FDF9F0, #FDF9F0); /* bege */
+  background: linear-gradient(135deg, #FDF9F0, #FDF9F0);
   color: #4A4A4A;
   text-align: center;
   padding: 80px 20px 40px 20px;
@@ -133,12 +133,11 @@ section ul li:hover {
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
   opacity: 1;
 }
-.floating-buttons a#sobre { background:#4A4A4A; }    /* cinza */
-.floating-buttons a#servicos { background:#CFC4A3; color:#4A4A4A; } /* bege */
-.floating-buttons a#garantia { background:#8B7D6B; } /* marrom suave */
-.floating-buttons a#contato { background:#25D366; } /* verde WhatsApp */
+.floating-buttons a#sobre { background:#4A4A4A; }
+.floating-buttons a#servicos { background:#CFC4A3; color:#4A4A4A; }
+.floating-buttons a#garantia { background:#8B7D6B; }
+.floating-buttons a#contato { background:#25D366; }
 
-/* Footer */
 footer {
   background:#FDF9F0;
   color:#4A4A4A;
@@ -235,7 +234,7 @@ footer {
   <p>&copy; 2025 Zona Segura.</p>
 </footer>
 
-<!-- Botões flutuantes apenas com ícones -->
+<!-- Botões flutuantes -->
 <div class="floating-buttons">
   <a href="#sobre" id="sobre" title="Sobre"><i class="fas fa-info"></i></a>
   <a href="#servicos" id="servicos" title="Serviços"><i class="fas fa-tools"></i></a>
@@ -244,17 +243,44 @@ footer {
 </div>
 
 <script>
-// Animação de seções ao aparecer
+// Animação de seções e destaque de botão ativo
 document.addEventListener("DOMContentLoaded", function() {
   const sections = document.querySelectorAll("section");
+  const buttons = document.querySelectorAll(".floating-buttons a");
+
   function checkVisible() {
+    const windowTop = window.scrollY;
     const windowBottom = window.innerHeight + window.scrollY;
-    sections.forEach(section => {
+
+    sections.forEach((section, index) => {
       if (windowBottom > section.offsetTop + 100) {
         section.classList.add("visible");
       }
     });
+
+    // Destacar botão da seção atual
+    let currentSectionId = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80; 
+      const sectionBottom = sectionTop + section.offsetHeight;
+      if (windowTop >= sectionTop && windowTop < sectionBottom) {
+        currentSectionId = section.id;
+      }
+    });
+
+    buttons.forEach(btn => {
+      if (btn.id === currentSectionId) {
+        btn.style.transform = "scale(1.2)";
+        btn.style.opacity = "1";
+        btn.style.boxShadow = "0 6px 14px rgba(0,0,0,0.4)";
+      } else {
+        btn.style.transform = "scale(1)";
+        btn.style.opacity = "0.85";
+        btn.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+      }
+    });
   }
+
   window.addEventListener("scroll", checkVisible);
   checkVisible();
 });
