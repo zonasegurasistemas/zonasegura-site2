@@ -1,4 +1,3 @@
-index.html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -15,45 +14,15 @@ body {
   padding:0;
   line-height:1.6;
   scroll-behavior: smooth;
-  scroll-padding-top: 60px; /* para barra fixa */
-}
-
-/* Barra de navegação fixa */
-.fixed-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  background: rgba(139, 94, 60, 0.8); /* marrom translúcido */
-  padding: 10px 0;
-  z-index: 1000;
-  backdrop-filter: blur(5px);
-  transition: background 0.3s;
-}
-.fixed-nav a {
-  color: #F5F5DC;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 4px;
-  transition: background 0.3s, color 0.3s;
-}
-.fixed-nav a:hover {
-  background: #563A2C;
-  color: #FFF;
 }
 
 /* Cabeçalho elegante */
 header {
-  background: linear-gradient(135deg, #8B5E3C, #D9C9B6);
+  background: linear-gradient(135deg, #F5F5DC, #EDE6D6); /* tons de bege */
   color: #333;
   text-align: center;
   padding: 100px 20px 40px 20px;
   position: relative;
-  z-index: 500; /* menor que nav para barra ficar sobre */
 }
 .header-top {
   position: absolute;
@@ -67,7 +36,7 @@ header {
   text-decoration: none;
   transition: color 0.3s;
 }
-.contact-icons a:hover { color: #563A2C; }
+.contact-icons a:hover { color: #DCD2B4; }
 .logo-container {
   display: flex;
   flex-direction: column;
@@ -90,15 +59,15 @@ header {
 .header-button {
   display: inline-block;
   padding: 12px 24px;
-  background: #6B4C3B;
-  color: #F5F5DC;
+  background: #EDE6D6; /* bege */
+  color: #333;
   font-weight: bold;
   text-decoration: none;
   border-radius: 6px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: background 0.3s, transform 0.3s;
 }
-.header-button:hover { background: #563A2C; transform: scale(1.05); }
+.header-button:hover { background: #DCD2B4; transform: scale(1.05); }
 .header-divider {
   height: 2px;
   background: rgba(74,74,74,0.3);
@@ -169,7 +138,7 @@ section ul li:hover { transform:translateY(-10px) scale(1.03); }
 @keyframes floatIn { to { opacity: 1; transform: translateY(0) scale(1); } }
 
 /* Footer */
-footer { background:#6B4C3B; color:#F5F5DC; text-align:center; padding:20px; font-size:0.9em; }
+footer { background:#F5F5DC; color:#4A4A4A; text-align:center; padding:20px; font-size:0.9em; }
 
 /* Responsividade */
 @media (max-width:768px){
@@ -181,18 +150,6 @@ footer { background:#6B4C3B; color:#F5F5DC; text-align:center; padding:20px; fon
 </style>
 </head>
 <body>
-
-<!-- Barra de navegação fixa -->
-<nav class="fixed-nav">
-  <a href="#sobre">Sobre</a>
-  <a href="#benefits">Por que escolher</a>
-  <a href="#servicos">Serviços</a>
-  <a href="#garantia">Garantias</a>
-  <a href="#depoimentos">Depoimentos</a>
-  <a href="#faq">FAQ</a>
-  <a href="#galeria">Galeria</a>
-  <a href="#contato">Contato</a>
-</nav>
 
 <header>
   <div class="header-top">
