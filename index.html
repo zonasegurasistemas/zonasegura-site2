@@ -7,19 +7,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
-/* --- CSS Geral --- */
 body {
   font-family: 'Segoe UI', Tahoma, sans-serif;
   margin:0;
   padding:0;
   line-height:1.6;
   scroll-behavior: smooth;
-  background:#ffffff; /* Fundo branco */
+  background:#ffffff; /* fundo branco */
 }
 
-/* Cabeçalho */
 header {
-  background: linear-gradient(135deg, #FDF9F0, #FDF9F0); /* Bege claro */
+  background: linear-gradient(135deg, #FDF9F0, #FDF9F0); /* bege */
   color: #4A4A4A;
   text-align: center;
   padding: 80px 20px 40px 20px;
@@ -49,13 +47,12 @@ header {
   border-radius: 2px;
 }
 
-/* Seções */
 section {
   padding:60px 20px;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
-  background: #ffffff; /* Fundo branco */
+  background: #ffffff;
 }
 section.visible {
   opacity: 1;
@@ -88,7 +85,7 @@ section ul li:hover {
   transform:translateY(-10px) scale(1.03);
 }
 
-/* Galeria de imagens */
+/* Galeria */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -107,7 +104,7 @@ section ul li:hover {
   transform: scale(1.05);
 }
 
-/* Botões flutuantes direito */
+/* Botões flutuantes redondos à direita */
 .floating-buttons {
   position: fixed;
   right: 20px;
@@ -125,7 +122,8 @@ section ul li:hover {
   height: 55px;
   border-radius: 50%;
   color: white;
-  font-size: 24px;
+  font-size: 22px;
+  text-decoration: none;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
   opacity: 0.85;
@@ -135,34 +133,10 @@ section ul li:hover {
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
   opacity: 1;
 }
-.phone { background-color: #CFC4A3; color:#4A4A4A; }
-.whatsapp { background-color: #25D366; }
-.instagram { background-color: #E4405F; }
-
-/* Mini-menu flutuante (links para seções) */
-.mini-menu {
-  position: fixed;
-  right: 20px;
-  bottom: 210px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 10000;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-.mini-menu a {
-  background: #4A4A4A;
-  color: #FDF9F0;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 14px;
-  text-align: center;
-}
-.mini-menu a:hover {
-  transform: translateX(-3px);
-}
+.floating-buttons a#sobre { background:#4A4A4A; }    /* cinza */
+.floating-buttons a#servicos { background:#CFC4A3; color:#4A4A4A; } /* bege */
+.floating-buttons a#garantia { background:#8B7D6B; } /* marrom suave */
+.floating-buttons a#contato { background:#25D366; } /* verde WhatsApp */
 
 /* Footer */
 footer {
@@ -173,7 +147,6 @@ footer {
   font-size:0.9em;
 }
 
-/* Responsividade */
 @media (max-width:768px){
   section ul li { width:90%; }
   .logo { max-width:120px; }
@@ -195,16 +168,6 @@ footer {
 <section id="sobre">
   <h2>Sobre a Zona Segura</h2>
   <p>A Zona Segura é especialista em segurança eletrônica em Brasília, oferecendo soluções completas para sua casa e empresa.</p>
-</section>
-
-<section id="benefits">
-  <h2>Por que escolher a Zona Segura?</h2>
-  <ul>
-    <li><i class="fas fa-shield-alt"></i><br>Proteção 24h</li>
-    <li><i class="fas fa-bolt"></i><br>Tecnologia de ponta</li>
-    <li><i class="fas fa-users"></i><br>Equipe especializada</li>
-    <li><i class="fas fa-handshake"></i><br>Serviço qualificado</li>
-  </ul>
 </section>
 
 <section id="servicos">
@@ -272,23 +235,12 @@ footer {
   <p>&copy; 2025 Zona Segura.</p>
 </footer>
 
-<!-- Mini-menu flutuante -->
-<div class="mini-menu" id="miniMenu">
-  <a href="#sobre">Sobre</a>
-  <a href="#benefits">Benefícios</a>
-  <a href="#servicos">Serviços</a>
-  <a href="#garantia">Garantia</a>
-  <a href="#depoimentos">Depoimentos</a>
-  <a href="#faq">FAQ</a>
-  <a href="#galeria">Galeria</a>
-  <a href="#contato">Contato</a>
-</div>
-
-<!-- Botões flutuantes direito -->
+<!-- Botões flutuantes apenas com ícones -->
 <div class="floating-buttons">
-  <a href="tel:+5561991614382" class="phone" title="Ligue Agora"><i class="fas fa-phone"></i></a>
-  <a href="https://wa.me/61991614382" class="whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <a href="https://www.instagram.com/zonaseguraa" class="instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="#sobre" id="sobre" title="Sobre"><i class="fas fa-info"></i></a>
+  <a href="#servicos" id="servicos" title="Serviços"><i class="fas fa-tools"></i></a>
+  <a href="#garantia" id="garantia" title="Garantia"><i class="fas fa-certificate"></i></a>
+  <a href="#contato" id="contato" title="Contato"><i class="fas fa-phone"></i></a>
 </div>
 
 <script>
@@ -305,16 +257,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   window.addEventListener("scroll", checkVisible);
   checkVisible();
-
-  // Mini-menu aparece após rolar 150px
-  const miniMenu = document.getElementById("miniMenu");
-  window.addEventListener("scroll", function() {
-    if (window.scrollY > 150) {
-      miniMenu.style.opacity = "1";
-    } else {
-      miniMenu.style.opacity = "0";
-    }
-  });
 });
 </script>
 
