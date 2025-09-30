@@ -14,6 +14,44 @@ body {
   padding:0;
   line-height:1.6;
   scroll-behavior: smooth;
+  display: flex;
+}
+
+/* Menu lateral */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 200px;
+  background: #EDE6D6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+nav a {
+  color: #4A4A4A;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 5px 0;
+  width: 90%;
+  text-align: center;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+nav a:hover {
+  background: #DCD2B4;
+  color: #333;
+}
+
+/* Conteúdo principal deslocado pelo menu lateral */
+main {
+  margin-left: 200px;
+  flex: 1;
 }
 
 /* Cabeçalho */
@@ -21,7 +59,7 @@ header {
   background: linear-gradient(135deg, #F5F5DC, #EDE6D6);
   color: #333;
   text-align: center;
-  padding: 100px 20px 40px 20px;
+  padding: 80px 20px 40px 20px;
   position: relative;
 }
 .logo-container {
@@ -51,29 +89,6 @@ header {
   border-radius: 2px;
 }
 
-/* Menu centralizado no topo */
-nav {
-  display: flex;
-  justify-content: center;
-  background:#EDE6D6;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-nav a {
-  color:#4A4A4A;
-  padding: 15px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s;
-}
-nav a:hover {
-  background: #DCD2B4;
-  color: #333;
-}
-
 /* Seções */
 section {
   padding:60px 20px;
@@ -95,7 +110,7 @@ section ul li:hover { transform:translateY(-10px) scale(1.03); }
 .gallery img { width: 300px; height: 200px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
 .gallery img:hover { transform: scale(1.05); }
 
-/* Botões flutuantes direito (telefone, WhatsApp, Instagram) */
+/* Botões flutuantes direito */
 .floating-buttons {
   position: fixed;
   right: 20px;
@@ -118,7 +133,6 @@ section ul li:hover { transform:translateY(-10px) scale(1.03); }
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .floating-buttons a:hover { transform: scale(1.1); box-shadow: 0 8px 16px rgba(0,0,0,0.5); }
-/* Cores dos botões */
 .phone { background-color: #CFC4A3; color:#4A4A4A; }
 .whatsapp { background-color: #25D366; }
 .instagram { background-color: #E4405F; }
@@ -128,24 +142,18 @@ footer { background:#F5F5DC; color:#4A4A4A; text-align:center; padding:20px; fon
 
 /* Responsividade */
 @media (max-width:768px){
+  nav { position: relative; width: 100%; height: auto; flex-direction: row; justify-content: center; padding: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+  nav a { margin: 0 5px; width: auto; }
+  main { margin-left: 0; }
   .logo { max-width:120px; }
   .slogan { font-size:18px; }
   section ul li { width:90%; }
-  .floating-buttons { right:10px; bottom:10px; gap:15px; }
 }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo-container">
-    <img src="logo.png" alt="Logo Zona Segura" class="logo">
-    <h1 class="slogan">Zona Segura - Sistemas de Segurança</h1>
-  </div>
-  <div class="header-divider"></div>
-</header>
-
-<!-- Menu centralizado -->
+<!-- Menu lateral -->
 <nav>
   <a href="#sobre">Sobre Nós</a>
   <a href="#benefits">Por que escolher</a>
@@ -158,88 +166,97 @@ footer { background:#F5F5DC; color:#4A4A4A; text-align:center; padding:20px; fon
 </nav>
 
 <main>
-  <!-- Sobre -->
-  <section id="sobre">
-    <h2>Sobre a Zona Segura</h2>
-    <p>A Zona Segura é especialista em segurança eletrônica em Brasília, oferecendo soluções completas para sua casa e empresa.</p>
-  </section>
+<header>
+  <div class="logo-container">
+    <img src="logo.png" alt="Logo Zona Segura" class="logo">
+    <h1 class="slogan">Zona Segura - Sistemas de Segurança</h1>
+  </div>
+  <div class="header-divider"></div>
+</header>
 
-  <!-- Benefícios -->
-  <section id="benefits">
-    <h2>Por que escolher a Zona Segura?</h2>
-    <ul>
-      <li><i class="fas fa-shield-alt"></i><br>Proteção 24h</li>
-      <li><i class="fas fa-bolt"></i><br>Tecnologia de ponta</li>
-      <li><i class="fas fa-users"></i><br>Equipe especializada</li>
-      <li><i class="fas fa-handshake"></i><br>Serviço qualificado</li>
-    </ul>
-  </section>
+<!-- Sobre -->
+<section id="sobre">
+  <h2>Sobre a Zona Segura</h2>
+  <p>A Zona Segura é especialista em segurança eletrônica em Brasília, oferecendo soluções completas para sua casa e empresa.</p>
+</section>
 
-  <!-- Serviços -->
-  <section id="servicos">
-    <h2>Nossos Serviços</h2>
-    <ul>
-      <li><i class="fas fa-video"></i><br>Instalação de câmeras e Alarmes</li>
-      <li><i class="fas fa-shield-alt"></i><br>Suporte técnico</li>
-      <li><i class="fas fa-tools"></i><br>Manutenção preventiva</li>
-      <li><i class="fas fa-user-shield"></i><br>Consultoria em segurança</li>
-    </ul>
-  </section>
+<!-- Benefícios -->
+<section id="benefits">
+  <h2>Por que escolher a Zona Segura?</h2>
+  <ul>
+    <li><i class="fas fa-shield-alt"></i><br>Proteção 24h</li>
+    <li><i class="fas fa-bolt"></i><br>Tecnologia de ponta</li>
+    <li><i class="fas fa-users"></i><br>Equipe especializada</li>
+    <li><i class="fas fa-handshake"></i><br>Serviço qualificado</li>
+  </ul>
+</section>
 
-  <!-- Garantias -->
-  <section id="garantia">
-    <h2>Garantias</h2>
-    <ul>
-      <li><i class="fas fa-certificate"></i><br>Produtos: até 2 anos</li>
-      <li><i class="fas fa-tools"></i><br>Serviços: 3 meses</li>
-    </ul>
-  </section>
+<!-- Serviços -->
+<section id="servicos">
+  <h2>Nossos Serviços</h2>
+  <ul>
+    <li><i class="fas fa-video"></i><br>Instalação de câmeras e Alarmes</li>
+    <li><i class="fas fa-shield-alt"></i><br>Suporte técnico</li>
+    <li><i class="fas fa-tools"></i><br>Manutenção preventiva</li>
+    <li><i class="fas fa-user-shield"></i><br>Consultoria em segurança</li>
+  </ul>
+</section>
 
-  <!-- Depoimentos -->
-  <section id="depoimentos">
-    <h2>Depoimentos</h2>
-    <article>
-      <p><strong>João S.</strong><br>"A Zona Segura transformou a segurança da minha empresa. Atendimento excelente e tecnologia avançada."</p>
-    </article>
-    <article>
-      <p><strong>Maria F.</strong><br>"Agora me sinto muito mais segura em casa. Recomendo o serviço para todos."</p>
-    </article>
-  </section>
+<!-- Garantias -->
+<section id="garantia">
+  <h2>Garantias</h2>
+  <ul>
+    <li><i class="fas fa-certificate"></i><br>Produtos: até 2 anos</li>
+    <li><i class="fas fa-tools"></i><br>Serviços: 3 meses</li>
+  </ul>
+</section>
 
-  <!-- FAQ -->
-  <section id="faq">
-    <h2>Perguntas Frequentes</h2>
-    <article>
-      <h3>Quais tipos de câmeras vocês instalam?</h3>
-      <p>Instalamos câmeras analógicas, IP, com gravação em nuvem e acesso remoto via celular ou computador.</p>
-    </article>
-    <article>
-      <h3>Qual o prazo de instalação?</h3>
-      <p>Normalmente entre 1 e 3 dias, dependendo da complexidade do projeto.</p>
-    </article>
-    <article>
-      <h3>Há garantia nos serviços?</h3>
-      <p>Sim, oferecemos garantia de até 2 anos para produtos e 3 meses para serviços.</p>
-    </article>
-  </section>
+<!-- Depoimentos -->
+<section id="depoimentos">
+  <h2>Depoimentos</h2>
+  <article>
+    <p><strong>João S.</strong><br>"A Zona Segura transformou a segurança da minha empresa. Atendimento excelente e tecnologia avançada."</p>
+  </article>
+  <article>
+    <p><strong>Maria F.</strong><br>"Agora me sinto muito mais segura em casa. Recomendo o serviço para todos."</p>
+  </article>
+</section>
 
-  <!-- Galeria -->
-  <section id="galeria">
-    <h2>Galeria de Imagens</h2>
-    <div class="gallery">
-      <img src="cameras.jpg" alt="Câmeras de segurança" loading="lazy">
-      <img src="acesso remoto.jpg" alt="Acesso remoto" loading="lazy">
-      <img src="alarme.jpg" alt="Alarme" loading="lazy">
-    </div>
-  </section>
+<!-- FAQ -->
+<section id="faq">
+  <h2>Perguntas Frequentes</h2>
+  <article>
+    <h3>Quais tipos de câmeras vocês instalam?</h3>
+    <p>Instalamos câmeras analógicas, IP, com gravação em nuvem e acesso remoto via celular ou computador.</p>
+  </article>
+  <article>
+    <h3>Qual o prazo de instalação?</h3>
+    <p>Normalmente entre 1 e 3 dias, dependendo da complexidade do projeto.</p>
+  </article>
+  <article>
+    <h3>Há garantia nos serviços?</h3>
+    <p>Sim, oferecemos garantia de até 2 anos para produtos e 3 meses para serviços.</p>
+  </article>
+</section>
 
-  <!-- Contato -->
-  <section id="contato">
-    <h2>Contato</h2>
-    <p><strong>Telefone:</strong> <a href="tel:+5561991614382">(61) 99161-4382</a></p>
-    <p><strong>Email:</strong> <a href="mailto:zonasegurasistemas@gmail.com">zonasegurasistemas@gmail.com</a></p>
-    <p><strong>Endereço:</strong> Brasília, Distrito Federal</p>
-  </section>
+<!-- Galeria -->
+<section id="galeria">
+  <h2>Galeria de Imagens</h2>
+  <div class="gallery">
+    <img src="cameras.jpg" alt="Câmeras de segurança" loading="lazy">
+    <img src="acesso remoto.jpg" alt="Acesso remoto" loading="lazy">
+    <img src="alarme.jpg" alt="Alarme" loading="lazy">
+  </div>
+</section>
+
+<!-- Contato -->
+<section id="contato">
+  <h2>Contato</h2>
+  <p><strong>Telefone:</strong> <a href="tel:+5561991614382">(61) 99161-4382</a></p>
+  <p><strong>Email:</strong> <a href="mailto:zonasegurasistemas@gmail.com">zonasegurasistemas@gmail.com</a></p>
+  <p><strong>Endereço:</strong> Brasília, Distrito Federal</p>
+</section>
+
 </main>
 
 <footer>
@@ -254,7 +271,7 @@ footer { background:#F5F5DC; color:#4A4A4A; text-align:center; padding:20px; fon
 </div>
 
 <script>
-// Rolagem suave para menu
+// Rolagem suave para menu lateral
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
@@ -262,7 +279,7 @@ document.querySelectorAll('nav a').forEach(link => {
     const targetSection = document.getElementById(targetId);
     if (targetSection) {
       window.scrollTo({
-        top: targetSection.offsetTop - document.querySelector('nav').offsetHeight,
+        top: targetSection.offsetTop,
         behavior: 'smooth'
       });
     }
