@@ -51,6 +51,25 @@ header {
   border-radius: 2px;
 }
 
+/* Botão telefone no cabeçalho */
+.header-phone {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #DCD2B4;
+  color: #4A4A4A;
+  font-weight: bold;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s, background 0.3s;
+}
+.header-phone:hover {
+  transform: scale(1.05);
+  background: #CFC4A3;
+}
+
 /* Seções */
 section {
   padding:60px 20px;
@@ -66,25 +85,6 @@ section h2 { text-align:center; font-size:2.2em; margin-bottom:20px; color:#4A4A
 section ul { list-style:none; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
 section ul li { background:white; padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); width:250px; text-align:center; transition:transform 0.4s ease; }
 section ul li:hover { transform:translateY(-10px) scale(1.03); }
-
-/* Botão Peça um Orçamento */
-.quote-button {
-  display: block;
-  margin: 40px auto;
-  padding: 15px 30px;
-  background: #DCD2B4;
-  color: #4A4A4A;
-  font-weight: bold;
-  font-size: 18px;
-  text-decoration: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s, background 0.3s;
-}
-.quote-button:hover {
-  transform: scale(1.05);
-  background: #CFC4A3;
-}
 
 /* Galeria de imagens */
 .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
@@ -159,7 +159,6 @@ footer { background:#F5F5DC; color:#4A4A4A; text-align:center; padding:20px; fon
   .slogan { font-size:18px; }
   section ul li { width:90%; }
   .nav-buttons { top:100px; right:10px; }
-  .quote-button { width: 90%; font-size:16px; }
 }
 </style>
 </head>
@@ -171,6 +170,7 @@ footer { background:#F5F5DC; color:#4A4A4A; text-align:center; padding:20px; fon
     <h1 class="slogan">Zona Segura - Sistemas de Segurança</h1>
   </div>
   <div class="header-divider"></div>
+  <a href="tel:+5561991614382" class="header-phone"><i class="fas fa-phone"></i> Ligue Agora</a>
 </header>
 
 <main>
@@ -201,9 +201,6 @@ footer { background:#F5F5DC; color:#4A4A4A; text-align:center; padding:20px; fon
       <li><i class="fas fa-user-shield"></i><br>Consultoria em segurança</li>
     </ul>
   </section>
-
-  <!-- Botão Peça um Orçamento -->
-  <a href="https://wa.me/61991614382" class="quote-button" target="_blank">Peça um Orçamento</a>
 
   <!-- Garantias -->
   <section id="garantia">
