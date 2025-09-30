@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zona Segura - Sistemas de Segurança em Brasília</title>
 
-<!-- SEO -->
 <meta name="description" content="Zona Segura - Instalação de câmeras, alarmes e sistemas de segurança em Brasília. Proteja sua casa, comércio ou empresa com tecnologia avançada.">
 <meta name="keywords" content="câmeras de segurança Brasília, alarme residencial DF, sistemas de segurança empresarial, instalação de câmeras, Zona Segura">
 <meta name="author" content="Zona Segura">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
 body {
   font-family: 'Segoe UI', Tahoma, sans-serif;
@@ -21,7 +21,36 @@ body {
   scroll-behavior: smooth;
   background:#ffffff;
 }
-
+.menu-fixo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 9999;
+}
+.menu-fixo ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 10px;
+}
+.menu-fixo ul li {
+  margin: 0 15px;
+}
+.menu-fixo ul li a {
+  text-decoration: none;
+  color: #4A4A4A;
+  font-weight: bold;
+}
+.menu-fixo ul li a:hover {
+  color: #25D366;
+}
+body {
+  padding-top: 60px;
+}
 header {
   background: linear-gradient(135deg, #FDF9F0, #FDF9F0);
   color: #4A4A4A;
@@ -52,7 +81,6 @@ header {
   margin: 30px auto 0 auto;
   border-radius: 2px;
 }
-
 section {
   padding:60px 20px;
   opacity: 0;
@@ -90,8 +118,6 @@ section ul li {
 section ul li:hover {
   transform:translateY(-10px) scale(1.03);
 }
-
-/* Galeria */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -109,8 +135,6 @@ section ul li:hover {
 .gallery img:hover {
   transform: scale(1.05);
 }
-
-/* Grid Cards (depoimentos e FAQ) */
 .grid-cards {
   display: flex;
   flex-wrap: wrap;
@@ -125,8 +149,6 @@ section ul li:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   font-size: 0.95em;
 }
-
-/* Botões flutuantes */
 .floating-buttons {
   position: fixed;
   right: 20px;
@@ -178,7 +200,6 @@ section ul li:hover {
   opacity: 1;
   transform: translateY(-50%) scale(1);
 }
-
 footer {
   background:#FDF9F0;
   color:#4A4A4A;
@@ -186,7 +207,6 @@ footer {
   padding:20px;
   font-size:0.9em;
 }
-
 .cta {
   text-align:center;
   margin-top:20px;
@@ -203,7 +223,6 @@ footer {
 .cta a:hover {
   background:#1ebe5d;
 }
-
 @media (max-width:768px){
   section ul li { width:90%; }
   .logo { max-width:120px; }
@@ -213,6 +232,18 @@ footer {
 </head>
 <body>
 
+<nav class="menu-fixo">
+  <ul>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#garantia">Garantias</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
 <header>
   <div class="logo-container">
     <img src="logo.png" alt="Logo Zona Segura" class="logo">
@@ -220,7 +251,7 @@ footer {
   </div>
   <div class="header-divider"></div>
   <div class="cta">
-    <a href="https://wa.me/61991614382" target="_blank">Peça um Orçamento</a>
+    <a href="https://wa.me/61991614382" target="_blank">📞 Solicitar Orçamento</a>
   </div>
 </header>
 
@@ -239,18 +270,8 @@ footer {
     <li><i class="fas fa-user-shield"></i><br>Consultoria em segurança</li>
   </ul>
   <div class="cta">
-    <a href="https://wa.me/61991614382" target="_blank">Solicite um Orçamento</a>
+    <a href="https://wa.me/61991614382" target="_blank">Solicitar Orçamento</a>
   </div>
-</section>
-
-<section id="diferenciais">
-  <h2>Por que escolher a Zona Segura?</h2>
-  <ul>
-    <li><i class="fas fa-check-circle"></i><br>Equipe especializada</li>
-    <li><i class="fas fa-clock"></i><br>Atendimento rápido</li>
-    <li><i class="fas fa-star"></i><br>Garantia estendida</li>
-    <li><i class="fas fa-lock"></i><br>Tecnologia de ponta</li>
-  </ul>
 </section>
 
 <section id="garantia">
@@ -262,13 +283,14 @@ footer {
 </section>
 
 <section id="galeria">
+  <h2>Galeria de Imagens</h2>
   <div class="gallery">
     <img src="cameras.jpg" alt="Câmeras de segurança" loading="lazy">
-    <img src="acesso remoto.jpg" alt="Acesso remoto" loading="lazy">
+    <img src="acesso-remoto.jpg" alt="Acesso remoto" loading="lazy">
     <img src="alarme.jpg" alt="Alarme" loading="lazy">
   </div>
 </section>
-  
+
 <section id="depoimentos">
   <h2>O que nossos clientes dizem</h2>
   <div class="grid-cards">
@@ -314,10 +336,12 @@ footer {
       <h3>Posso expandir o sistema depois?</h3>
       <p>Com certeza. Nossos sistemas são modulares e podem ser ampliados conforme a sua necessidade.</p>
     </div>
+    <div class="card">
+      <h3>Como funciona o suporte técnico?</h3>
+      <p>Nosso suporte técnico é rápido e disponível para solucionar dúvidas ou problemas via telefone ou WhatsApp.</p>
+    </div>
   </div>
 </section>
-
-
 
 <section id="contato">
   <h2>Contato</h2>
@@ -328,10 +352,9 @@ footer {
 </main>
 
 <footer>
-  <p>&copy; 2025 Zona Segura. </p>
+  <p>&copy; 2025 Zona Segura. Todos os direitos reservados.</p>
 </footer>
 
-<!-- Botões flutuantes -->
 <div class="floating-buttons">
   <a href="tel:+5561991614382" class="telefone" title="Ligue Agora">
     <i class="fas fa-phone"></i>
@@ -365,6 +388,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
-
-
-
