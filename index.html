@@ -104,40 +104,20 @@ section ul li:hover {
   transform: scale(1.05);
 }
 
-/* Botões flutuantes à direita (interação + sociais) */
+/* Botões flutuantes (Telefone, WhatsApp, Instagram) */
 .floating-buttons {
   position: fixed;
   right: 20px;
   bottom: 20px;
   display: flex;
   flex-direction: column;
-  gap: 15px; /* espaçamento entre botões de navegação */
+  gap: 15px;
   z-index: 10000;
 }
 
-/* Botões de navegação menores (mais discretos) */
-.floating-buttons a#sobre,
-.floating-buttons a#servicos,
-.floating-buttons a#garantia,
-.floating-buttons a#contato {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  color: white;
-  font-size: 18px;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
-  opacity: 0.75;
-}
-
-/* Botões sociais (WhatsApp e Instagram) */
+.floating-buttons a.telefone,
 .floating-buttons a.whatsapp,
 .floating-buttons a.instagram {
-  margin-top: 30px; /* separa os sociais dos botões de navegação */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -158,12 +138,8 @@ section ul li:hover {
   opacity: 1;
 }
 
-/* Cores dos botões de navegação */
-.floating-buttons a#sobre { background:#4A4A4A; }
-.floating-buttons a#servicos { background:#CFC4A3; color:#4A4A4A; }
-.floating-buttons a#garantia { background:#8B7D6B; }
-.floating-buttons a#contato { background:#25D366; }
-/* Cores dos botões sociais */
+/* Cores dos botões */
+.floating-buttons a.telefone { background:#4A4A4A; }
 .floating-buttons a.whatsapp { background:#25D366; }
 .floating-buttons a.instagram { background:#E4405F; }
 
@@ -265,12 +241,7 @@ footer {
 
 <!-- Botões flutuantes -->
 <div class="floating-buttons">
-  <!-- Navegação -->
-  <a href="#sobre" id="sobre" title="Sobre"><i class="fas fa-user"></i></a>
-  <a href="#servicos" id="servicos" title="Serviços"><i class="fas fa-cogs"></i></a>
-  <a href="#garantia" id="garantia" title="Garantia"><i class="fas fa-certificate"></i></a>
-  <a href="#contato" id="contato" title="Contato"><i class="fas fa-phone"></i></a>
-  <!-- Sociais -->
+  <a href="tel:+5561991614382" class="telefone" title="Ligue Agora"><i class="fas fa-phone"></i></a>
   <a href="https://wa.me/61991614382" class="whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <a href="https://www.instagram.com/zonaseguraa/" class="instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
 </div>
