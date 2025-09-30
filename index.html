@@ -3,7 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zona Segura</title>
+<title>Zona Segura - Sistemas de Segurança em Brasília</title>
+
+<!-- SEO -->
+<meta name="description" content="Zona Segura - Instalação de câmeras, alarmes e sistemas de segurança em Brasília. Proteja sua casa, comércio ou empresa com tecnologia avançada.">
+<meta name="keywords" content="câmeras de segurança Brasília, alarme residencial DF, sistemas de segurança empresarial, instalação de câmeras, Zona Segura">
+<meta name="author" content="Zona Segura">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -104,7 +110,23 @@ section ul li:hover {
   transform: scale(1.05);
 }
 
-/* Botões flutuantes (Telefone, WhatsApp, Instagram) */
+/* Depoimentos grid */
+.depoimentos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.depoimento-card {
+  background: #FDF9F0;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-size: 0.95em;
+}
+
+/* Botões flutuantes */
 .floating-buttons {
   position: fixed;
   right: 20px;
@@ -114,7 +136,6 @@ section ul li:hover {
   gap: 15px;
   z-index: 10000;
 }
-
 .floating-buttons a {
   position: relative;
   display: flex;
@@ -130,19 +151,14 @@ section ul li:hover {
   transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
   opacity: 0.85;
 }
-
 .floating-buttons a:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
   opacity: 1;
 }
-
-/* Cores dos botões */
 .floating-buttons a.telefone { background:#4A4A4A; }
 .floating-buttons a.whatsapp { background:#25D366; }
 .floating-buttons a.instagram { background:#E4405F; }
-
-/* Tooltips animados */
 .floating-buttons a .tooltip {
   position: absolute;
   right: 65px;
@@ -171,6 +187,23 @@ footer {
   font-size:0.9em;
 }
 
+.cta {
+  text-align:center;
+  margin-top:20px;
+}
+.cta a {
+  background:#25D366;
+  color:white;
+  padding:12px 24px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  transition: background 0.3s;
+}
+.cta a:hover {
+  background:#1ebe5d;
+}
+
 @media (max-width:768px){
   section ul li { width:90%; }
   .logo { max-width:120px; }
@@ -186,12 +219,15 @@ footer {
     <h1 class="slogan">Zona Segura - Sistemas de Segurança</h1>
   </div>
   <div class="header-divider"></div>
+  <div class="cta">
+    <a href="https://wa.me/61991614382" target="_blank">Peça um Orçamento</a>
+  </div>
 </header>
 
 <main>
 <section id="sobre">
   <h2>Sobre a Zona Segura</h2>
-  <p>A Zona Segura é especialista em segurança eletrônica em Brasília, oferecendo soluções completas para sua casa e empresa.</p>
+  <p>A Zona Segura é especialista em segurança eletrônica em Brasília, oferecendo soluções completas para sua casa, comércio e empresa.</p>
 </section>
 
 <section id="servicos">
@@ -201,6 +237,19 @@ footer {
     <li><i class="fas fa-shield-alt"></i><br>Suporte técnico</li>
     <li><i class="fas fa-tools"></i><br>Manutenção preventiva</li>
     <li><i class="fas fa-user-shield"></i><br>Consultoria em segurança</li>
+  </ul>
+  <div class="cta">
+    <a href="https://wa.me/61991614382" target="_blank">Solicite um Orçamento</a>
+  </div>
+</section>
+
+<section id="diferenciais">
+  <h2>Por que escolher a Zona Segura?</h2>
+  <ul>
+    <li><i class="fas fa-check-circle"></i><br>Equipe especializada</li>
+    <li><i class="fas fa-clock"></i><br>Atendimento rápido</li>
+    <li><i class="fas fa-star"></i><br>Garantia estendida</li>
+    <li><i class="fas fa-lock"></i><br>Tecnologia de ponta</li>
   </ul>
 </section>
 
@@ -213,13 +262,25 @@ footer {
 </section>
 
 <section id="depoimentos">
-  <h2>Depoimentos</h2>
-  <article>
-    <p><strong>João S.</strong><br>"A Zona Segura transformou a segurança da minha empresa. Atendimento excelente e tecnologia avançada."</p>
-  </article>
-  <article>
-    <p><strong>Maria F.</strong><br>"Agora me sinto muito mais segura em casa. Recomendo o serviço para todos."</p>
-  </article>
+  <h2>O que nossos clientes dizem</h2>
+  <div class="depoimentos-grid">
+    <div class="depoimento-card">
+      <p>"A Zona Segura transformou a segurança da minha empresa. Atendimento excelente e tecnologia avançada."</p>
+      <strong>- João S.</strong>
+    </div>
+    <div class="depoimento-card">
+      <p>"Agora me sinto muito mais segura em casa. Recomendo o serviço para todos."</p>
+      <strong>- Maria F.</strong>
+    </div>
+    <div class="depoimento-card">
+      <p>"Serviço rápido e impecável! Profissionais de confiança."</p>
+      <strong>- Carlos M.</strong>
+    </div>
+    <div class="depoimento-card">
+      <p>"Minha empresa está muito mais protegida. Ótimo suporte técnico."</p>
+      <strong>- Fernanda L.</strong>
+    </div>
+  </div>
 </section>
 
 <section id="faq">
@@ -242,9 +303,17 @@ footer {
   <h2>Galeria de Imagens</h2>
   <div class="gallery">
     <img src="cameras.jpg" alt="Câmeras de segurança" loading="lazy">
-    <img src="acesso remoto.jpg" alt="Acesso remoto" loading="lazy">
+    <img src="acesso-remoto.jpg" alt="Acesso remoto" loading="lazy">
     <img src="alarme.jpg" alt="Alarme" loading="lazy">
   </div>
+</section>
+
+<section id="mapa">
+  <h2>Onde Atendemos</h2>
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38393.123456789!2d-47.9292!3d-15.7801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3bcd123456%3A0xabcdef!2sBras%C3%ADlia%20-%20DF!5e0!3m2!1spt-BR!2sbr!4v1690000000000"
+    width="100%" height="350" style="border:0; border-radius:12px;" allowfullscreen loading="lazy">
+  </iframe>
 </section>
 
 <section id="contato">
@@ -256,7 +325,7 @@ footer {
 </main>
 
 <footer>
-  <p>&copy; 2025 Zona Segura.</p>
+  <p>&copy; 2025 Zona Segura. Todos os direitos reservados.</p>
 </footer>
 
 <!-- Botões flutuantes -->
