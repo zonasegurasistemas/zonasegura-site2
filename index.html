@@ -211,8 +211,8 @@ footer {
 }
 
 .carousel-slide img {
-  min-width: 100%;
-  max-height: 400px;
+  width: 100%;
+  aspect-ratio: 5 / 7; /* formato 5:7 */
   object-fit: cover;
   border-radius: 10px;
 }
@@ -269,7 +269,7 @@ footer {
   section ul li { width:90%; }
   .logo { max-width:120px; }
   .slogan { font-size:18px; }
-  .carousel-slide img { max-height: 250px; }
+  .carousel-slide img { max-height: auto; }
 }
 </style>
 </head>
@@ -325,22 +325,21 @@ footer {
 
 <!-- CARROSSEL -->
 <section id="carrossel">
-  <h2>Nossos Projetos</h2>
   <div class="carousel-container">
     <button class="prev">&#10094;</button>
     <div class="carousel-slide">
-      <img src="cameras.jpg" alt="Câmeras de segurança" loading="lazy">
-      <img src="im7zoom.jpg" alt="Instalação" loading="lazy">
-      <img src="instalacao.jpg" alt="Instalação" loading="lazy">
-      <img src="im7instalação.jpg" alt="Instalação" loading="lazy">
+      <img src="cameras.jpg" alt="Câmeras de segurança">
+      <img src="im7zoom.jpg" alt="Instalação">
+      <img src="instalacao.jpg" alt="Instalação">
+      <img src="im7instalação.jpg" alt="Instalação">
     </div>
     <button class="next">&#10095;</button>
-    <div class="carousel-indicators">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
+  </div>
+  <div class="carousel-indicators">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
   </div>
 </section>
 
