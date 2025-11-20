@@ -10,304 +10,348 @@
 <meta name="keywords" content="câmeras de segurança Brasília, alarme residencial DF, sistemas de segurança empresarial, instalação de câmeras, Zona Segura">
 <meta name="author" content="Zona Segura">
 
+<!-- JSON-LD (Organization) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Zona Segura",
+  "image": "https://seudominio.com/logo.png",
+  "@id": "",
+  "url": "https://seudominio.com",
+  "telephone": "+5561991614382",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Brasília",
+    "addressRegion": "DF",
+    "addressCountry": "BR"
+  },
+  "sameAs": ["https://www.instagram.com/zonaseguraa/"]
+}
+</script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* ------------------------- GLOBAL ------------------------- */
-body {
-  font-family: 'Poppins', sans-serif;
-  margin:0;
-  padding:0;
-  background:#f7f9fc;
-  color:#2b2b2b;
-  line-height:1.7;
-  scroll-behavior: smooth;
+/* Paleta de cores de confiança */
+:root {
+  --primary-dark: #0A1A2F;      /* Azul marinho – confiança e solidez */
+  --primary-blue: #1F4F99;      /* Azul profissional – tecnologia */
+  --primary-light: #F4F6F9;     /* Cinza muito claro – suavidade */
+  --accent: #FF8A00;            /* Laranja – destaque e ação */
+  --text-dark: #1B1B1B;
+  --text-medium: #4A4A4A;
 }
 
-h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif;
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin:0;
+  padding:0;
+  line-height:1.6;
+  scroll-behavior: smooth;
+  background: var(--primary-light);
+  color: var(--text-dark);
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+  color: #ffffff;
+  text-align: center;
+  padding: 80px 20px 40px 20px;
+}
+.logo {
+  max-width: 160px;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+.slogan {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.header-divider {
+  height: 2px;
+  background: rgba(255,255,255,0.3);
+  width: 60%;
+  margin: 30px auto 0 auto;
+  border-radius: 2px;
 }
 
 section {
-  padding:80px 20px;
-  opacity:0;
-  transform:translateY(40px);
-  transition:opacity .8s ease, transform .8s ease;
+  padding:60px 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  background: var(--primary-light);
 }
 section.visible {
-  opacity:1;
-  transform:translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
-
-/* ------------------------- HEADER ------------------------- */
-header {
-  background:linear-gradient(135deg, #0A1A2F, #102c4a);
-  color:white;
+section h2 {
   text-align:center;
-  padding:70px 20px 50px 20px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.2);
-}
-
-.logo {
-  max-width:150px;
+  font-size:2.2em;
   margin-bottom:20px;
+  color: var(--primary-dark);
 }
-
-.slogan {
-  font-size:24px;
-  font-weight:600;
-  margin-bottom:15px;
-  color:#ffffff;
-}
-
-.header-divider {
-  height:3px;
-  background:#ff8a00;
-  width:110px;
-  margin:25px auto;
-  border-radius:3px;
-}
-
-.cta a {
-  background:#ff8a00;
-  padding:14px 28px;
+section ul li {
+  background:white;
+  padding:20px;
   border-radius:10px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  width:250px;
+  text-align:center;
+  transition:transform 0.4s ease;
+  border-top: 4px solid var(--primary-blue);
+}
+section ul li:hover {
+  transform:translateY(-10px) scale(1.03);
+  border-top: 4px solid var(--accent);
+}
+
+/* Botões CTA */
+.cta a {
+  background: var(--accent);
   color:white;
-  font-weight:600;
+  padding:12px 24px;
+  border-radius:8px;
   text-decoration:none;
-  transition:.3s;
-  font-size:18px;
+  font-weight:bold;
+  transition: background 0.3s;
 }
 .cta a:hover {
-  background:#ffa733;
+  background:#e07a00;
 }
 
-/* ------------------------- LIST CARDS ------------------------- */
-ul.cards {
-  list-style:none;
-  padding:0;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:25px;
-}
-ul.cards li {
-  width:270px;
-  background:white;
-  padding:25px;
-  border-radius:14px;
-  text-align:center;
-  box-shadow:0 6px 14px rgba(0,0,0,0.1);
-  transition:.4s;
-}
-ul.cards li:hover {
-  transform:translateY(-10px);
-  box-shadow:0 10px 20px rgba(0,0,0,0.15);
-}
-ul.cards li i {
-  font-size:38px;
-  margin-bottom:12px;
-  color:#1F4F99;
-}
+/* Floating buttons */
+.floating-buttons a.telefone { background: var(--primary-dark); }
+.floating-buttons a.whatsapp { background:#25D366; }
+.floating-buttons a.instagram { background:#E4405F; }
 
-/* ------------------------- TEXT SECTIONS ------------------------- */
-section p {
-  max-width:900px;
-  margin:0 auto;
-  text-align:center;
-  font-size:1.05em;
-}
-
-/* ------------------------- CARROSSEL ------------------------- */
-.carousel-container {
-  width:90%;
-  max-width:1000px;
-  margin:auto;
-  position:relative;
-  overflow:hidden;
-  border-radius:14px;
-  box-shadow:0 6px 14px rgba(0,0,0,0.1);
-}
-.carousel-slide {
-  display:flex;
-  transition:transform .5s ease-in-out;
-}
-.carousel-slide img {
-  width:100%;
-  object-fit:cover;
-  border-radius:14px;
-}
-.carousel-container button {
-  position:absolute;
-  top:50%;
-  background:rgba(0,0,0,0.5);
-  border:none;
-  padding:14px;
-  border-radius:50%;
-  cursor:pointer;
-  font-size:22px;
-  color:white;
-  transform:translateY(-50%);
-}
-.prev { left:10px; }
-.next { right:10px; }
-
-.carousel-indicators {
-  text-align:center;
-  margin-top:12px;
-}
-.carousel-indicators .dot {
-  height:12px;
-  width:12px;
-  background:#aaa;
-  border-radius:50%;
-  display:inline-block;
-  margin:0 4px;
-  cursor:pointer;
-}
-.dot.active { background:#1F4F99; }
-
-/* ------------------------- GRID CARDS ------------------------- */
-.grid-cards {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:25px;
-}
-.card {
-  background:white;
-  width:280px;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 6px 14px rgba(0,0,0,0.1);
-}
-
-/* ------------------------- NOVA SEÇÃO DE FOTOS ------------------------- */
-.photo-gallery {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:18px;
-  max-width:1000px;
-  margin:auto;
-}
-.photo-gallery img {
-  width:260px;
-  height:200px;
-  object-fit:cover;
-  border-radius:12px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.15);
-  transition:.3s;
-}
-.photo-gallery img:hover {
-  transform:scale(1.03);
-}
-
-/* ------------------------- BOTÕES FLUTUANTES ------------------------- */
-.floating-buttons {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  z-index:99999;
-}
-.floating-buttons a {
-  width:60px;
-  height:60px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  color:white;
-  font-size:24px;
-  text-decoration:none;
-  opacity:0.85;
-  transition:.3s;
-}
-.floating-buttons a:hover {
-  transform:scale(1.12);
-  opacity:1;
-}
-.floating-buttons .telefone { background:#0A1A2F; }
-.floating-buttons .whatsapp { background:#25D366; }
-.floating-buttons .instagram { background:#E4405F; }
-
-/* ------------------------- FOOTER ------------------------- */
 footer {
-  background:#0A1A2F;
+  background: var(--primary-dark);
   color:white;
   text-align:center;
-  padding:25px;
-  margin-top:40px;
-}
-
-@media(max-width:768px){
-  ul.cards li { width:90%; }
-  .photo-gallery img { width:90%; height:220px; }
+  padding:20px;
+  font-size:0.9em;
 }
 </style>
 </head>
 <body>
 
 <header>
-    <img src="logo.png" class="logo" alt="Logo Zona Segura">
-    <h1 class="slogan">Zona Segura - Sistemas de Segurança</h1>
-    <div class="header-divider"></div>
-    <div class="cta">
-        <a href="https://wa.me/61991614382" target="_blank">Peça um Orçamento</a>
-    </div>
+  <img src="logo.png" alt="Logo Zona Segura" class="logo" loading="lazy">
+  <h1 class="slogan">Zona Segura - Sistemas de Segurança</h1>
+  <div class="header-divider" aria-hidden="true"></div>
+  <div class="cta">
+    <a href="https://wa.me/61991614382" target="_blank" rel="noopener noreferrer">Peça um Orçamento</a>
+  </div>
 </header>
 
 <main>
 
-<section id="sobre">
-    <h2>Sobre a Zona Segura</h2>
-    <p>A <strong>Zona Segura</strong> é especializada em sistemas de segurança eletrônica, oferecendo soluções completas e personalizadas para residências, comércios, condomínios e empresas. Com tecnologia de ponta e equipe qualificada, garantimos a proteção do que realmente importa para você.</p>
+<!-- Sobre -->
+<section id="sobre" class="container">
+  <h2 class="text-center">Sobre a Zona Segura</h2>
+  <p>Somos especializados em <strong>sistemas de segurança eletrônica</strong>, entregando projetos completos para residências, comércios, condomínios e empresas em Brasília. Unimos tecnologia, profissionalismo e atendimento próximo para proteger o que mais importa.</p>
 </section>
 
-<section id="servicos">
-    <h2>Nossos Serviços</h2>
-    <ul class="cards">
-        <li><i class="fas fa-video"></i><br><strong>Instalação de câmeras e alarmes</strong><p>Soluções modernas com câmeras HD, alarmes inteligentes e monitoramento completo.</p></li>
-        <li><i class="fas fa-shield-alt"></i><br><strong>Suporte técnico</strong><p>Atendimento rápido e eficiente para manter tudo funcionando perfeitamente.</p></li>
-        <li><i class="fas fa-tools"></i><br><strong>Manutenção preventiva</strong><p>Revisões periódicas para evitar falhas e garantir segurança contínua.</p></li>
-        <li><i class="fas fa-user-shield"></i><br><strong>Consultoria em segurança</strong><p>Projeto completo e personalizado para cada tipo de ambiente.</p></li>
-    </ul>
+<!-- Serviços -->
+<section id="servicos" class="container">
+  <h2 class="text-center">Nossos Serviços</h2>
+  <ul class="cards" aria-label="Serviços">
+    <li>
+      <i class="fas fa-video" aria-hidden="true"></i>
+      <h3>Instalação de câmeras e alarmes</h3>
+      <p>Equipamentos HD, gravação local e em nuvem, com acesso remoto pelo celular.</p>
+    </li>
+    <li>
+      <i class="fas fa-shield-alt" aria-hidden="true"></i>
+      <h3>Suporte técnico</h3>
+      <p>Atendimento ágil e manutenção preventiva para máxima disponibilidade.</p>
+    </li>
+    <li>
+      <i class="fas fa-tools" aria-hidden="true"></i>
+      <h3>Manutenção preventiva</h3>
+      <p>Revisões programadas que evitam falhas e prolongam a vida útil dos equipamentos.</p>
+    </li>
+    <li>
+      <i class="fas fa-user-shield" aria-hidden="true"></i>
+      <h3>Consultoria em segurança</h3>
+      <p>Projetos personalizados com avaliação técnica e o melhor custo-benefício.</p>
+    </li>
+  </ul>
 </section>
 
-<section id="carrossel">
-    <h2>Galeria de Instalações</h2>
-    <div class="carousel-container">
-        <button class="prev">&#10094;</button>
-        <div class="carousel-slide">
-            <img src="cameras.jpg" alt="Foto 1">
-            <img src="im7zoom.jpg" alt="Foto 2">
-            <img src="im7instalacao.jpg" alt="Foto 3">
-            <img src="gravadora.jpg" alt="Foto 4">
-        </div>
-        <button class="next">&#10095;</button>
+<!-- Carrossel (Galeria de Instalações) -->
+<section id="carrossel" class="container">
+  <h2 class="text-center">Galeria de Instalações</h2>
+  <div class="carousel-container" aria-label="Galeria principal">
+    <button class="prev" aria-label="Imagem anterior">&#10094;</button>
+    <div class="carousel-slide">
+      <img src="cameras.jpg" alt="Instalação de câmeras" loading="lazy">
+      <img src="im7zoom.jpg" alt="Detalhe de câmera" loading="lazy">
+      <img src="im7instalacao.jpg" alt="Técnico instalando câmera" loading="lazy">
+      <img src="gravadora.jpg" alt="Gravadora de vídeo" loading="lazy">
     </div>
-    <div class="carousel-indicators">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
+    <button class="next" aria-label="Próxima imagem">&#10095;</button>
+  </div>
+  <div class="carousel-indicators" role="tablist" aria-label="Navegação do carrossel">
+    <span class="dot active" role="tab" aria-selected="true"></span>
+    <span class="dot" role="tab"></span>
+    <span class="dot" role="tab"></span>
+    <span class="dot" role="tab"></span>
+  </div>
 </section>
 
-<section id="fotos-extra">
-    <h2>Mais Fotos de Projetos</h2>
-    <div class="photo-gallery">
-        <!-- Basta adicionar ou remover fotos aqui futuramente -->
-        <img src="foto1.jpg" alt="Projeto 1">
-        <img src="foto2.jpg" alt="Projeto 2">
-        <img src="foto3.jpg" alt="Projeto 3">
-    </div>
+<!-- Nova seção de fotos (adicionar/remover facilmente) -->
+<section id="fotos-extra" class="container">
+  <h2 class="text-center">Mais Fotos de Projetos</h2>
+  <div class="photo-gallery" id="photoGallery">
+    <!-- Para adicionar ou remover, edite os elementos <img> abaixo -->
+    <img src="foto1.jpg" alt="Projeto 1" loading="lazy" data-full="foto1.jpg">
+    <img src="foto2.jpg" alt="Projeto 2" loading="lazy" data-full="foto2.jpg">
+    <img src="foto3.jpg" alt="Projeto 3" loading="lazy" data-full="foto3.jpg">
+  </div>
+  <p class="small text-center">Clique em uma foto para ampliar.</p>
 </section>
 
-<section id="diferenciais">
-    <h2>Por que escolher a Zona Segura</h2>
-    <ul class="cards">
+<!-- Diferenciais -->
+<section id="diferenciais" class="container">
+  <h2 class="text-center">Por que escolher a Zona Segura</h2>
+  <ul class="cards" aria-label="Diferenciais">
+    <li>
+      <i class="fas fa-user-check" aria-hidden="true"></i>
+      <h3>Atendimento especializado</h3>
+      <p>Equipe treinada para entender e executar seu projeto com precisão.</p>
+    </li>
+    <li>
+      <i class="fas fa-clock" aria-hidden="true"></i>
+      <h3>Agilidade no serviço</h3>
+      <p>Instalação rápida e suporte eficiente para que você esteja protegido o quanto antes.</p>
+    </li>
+    <li>
+      <i class="fas fa-shield-alt" aria-hidden="true"></i>
+      <h3>Tecnologia de ponta</h3>
+      <p>Selecionamos equipamentos confiáveis e atualizados para máxima performance.</p>
+    </li>
+    <li>
+      <i class="fas fa-handshake" aria-hidden="true"></i>
+      <h3>Confiança e transparência</h3>
+      <p>Parcerias duradouras baseadas em ética e clareza comercial.</p>
+    </li>
+    <li>
+      <i class="fas fa-certificate" aria-hidden="true"></i>
+      <h3>Garantia estendida</h3>
+      <p>Até 2 anos para produtos e 3 meses nos serviços, conforme contrato.</p>
+    </li>
+  </ul>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="container">
+  <h2 class="text-center">Perguntas Frequentes</h2>
+  <div class="grid-cards">
+    <div class="card">
+      <h3>Quais tipos de câmeras vocês instalam?</h3>
+      <p>Instalamos câmeras analógicas e IP, com opções de gravação em nuvem e acesso remoto.</p>
+    </div>
+    <div class="card">
+      <h3>Qual o prazo de instalação?</h3>
+      <p>Normalmente entre 1 e 3 dias, dependendo da complexidade do projeto.</p>
+    </div>
+    <div class="card">
+      <h3>Há garantia nos serviços?</h3>
+      <p>Sim, oferecemos garantia de até 2 anos para produtos e 3 meses para serviços.</p>
+    </div>
+    <div class="card">
+      <h3>Vocês atendem condomínios?</h3>
+      <p>Sim, realizamos projetos personalizados para condomínios, comércios e empresas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contato -->
+<section id="contato" class="container">
+  <h2 class="text-center">Contato</h2>
+  <p class="text-center"><strong>Telefone:</strong> <a href="tel:+5561991614382">(61) 99161-4382</a> &nbsp;•&nbsp; <strong>Email:</strong> <a href="mailto:zonasegurasistemas@gmail.com">zonasegurasistemas@gmail.com</a></p>
+  <p class="text-center">Brasília, Distrito Federal</p>
+  <div class="text-center" style="margin-top:18px"><a class="small" href="https://wa.me/61991614382" target="_blank" rel="noopener noreferrer">Solicitar orçamento pelo WhatsApp</a></div>
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Zona Segura. Todos os direitos reservados.</p>
+</footer>
+
+<!-- Floating buttons -->
+<div class="floating-buttons" aria-hidden="false">
+  <a href="tel:+5561991614382" class="telefone" title="Ligue Agora"><i class="fas fa-phone" aria-hidden="true"></i></a>
+  <a href="https://wa.me/61991614382" class="whatsapp" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+  <a href="https://www.instagram.com/zonaseguraa/" class="instagram" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+</div>
+
+<!-- Modal para ampliar imagens da galeria -->
+<div id="imgModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;z-index:20000">
+  <button id="closeModal" aria-label="Fechar" style="position:absolute;top:18px;right:18px;background:transparent;border:none;color:white;font-size:28px;cursor:pointer">&times;</button>
+  <img id="modalImg" src="" alt="Ampliação" style="max-width:92%;max-height:86%;border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,0.5)">
+</div>
+
+<script>
+// animação de aparição das seções
+document.addEventListener('DOMContentLoaded', ()=>{
+  const sections = document.querySelectorAll('section');
+  function reveal(){
+    const trigger = window.innerHeight * 0.85;
+    sections.forEach(s=>{
+      const top = s.getBoundingClientRect().top;
+      if(top < trigger) s.classList.add('visible');
+    });
+  }
+  window.addEventListener('scroll', reveal);
+  reveal();
+
+  // carrossel simples
+  const slide = document.querySelector('.carousel-slide');
+  const imgs = document.querySelectorAll('.carousel-slide img');
+  const next = document.querySelector('.next');
+  const prev = document.querySelector('.prev');
+  const dots = document.querySelectorAll('.dot');
+  let idx = 0;
+  function update(){
+    slide.style.transform = `translateX(-${idx*100}%)`;
+    dots.forEach((d,i)=> d.classList.toggle('active', i===idx));
+  }
+  next.addEventListener('click', ()=>{ idx = (idx+1)%imgs.length; update(); });
+  prev.addEventListener('click', ()=>{ idx = (idx-1+imgs.length)%imgs.length; update(); });
+  dots.forEach((d,i)=> d.addEventListener('click', ()=>{ idx=i; update(); }));
+
+  // ajustar largura das imagens do carrossel para 100% do container
+  imgs.forEach(img=> img.style.width = '100%');
+
+  // galeria: abrir modal ao clicar
+  const gallery = document.getElementById('photoGallery');
+  const modal = document.getElementById('imgModal');
+  const modalImg = document.getElementById('modalImg');
+  const closeModal = document.getElementById('closeModal');
+  gallery.addEventListener('click', e=>{
+    const target = e.target.closest('img');
+    if(!target) return;
+    modalImg.src = target.dataset.full || target.src;
+    modal.style.display = 'flex';
+  });
+  closeModal.addEventListener('click', ()=> modal.style.display = 'none');
+  modal.addEventListener('click', e=>{ if(e.target===modal) modal.style.display='none' });
+
+  // acessibilidade: teclado fecha modal com Esc
+  document.addEventListener('keydown', e=>{ if(e.key === 'Escape') modal.style.display='none' });
+});
+</script>
+
+</body>
+</html>
