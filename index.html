@@ -6,19 +6,505 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Zona Segura | Câmeras, Alarmes e Controle de Acesso</title>
+<title>Zona Segura | Sistemas de Segurança em Brasília</title>
 
-<meta name="description"
-content="Instalação de Câmeras, Alarmes, Interfones, Vídeo Porteiros e Controle de Acesso. Atendimento residencial e empresarial.">
+<meta name="description" content="Especializada em instalação de câmeras, alarmes, interfones, vídeo porteiros e controle de acesso em Brasília.">
 
-<link rel="stylesheet" href="style.css">
+<meta name="keywords" content="câmeras Brasília, instalação de câmeras, alarmes, vídeo porteiro, interfones, controle de acesso, CFTV">
+
+<meta name="author" content="Zona Segura">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<script src="https://kit.fontawesome.com/7d3e6b8b25.js" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G79VFQYCZ3"></script>
+
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-G79VFQYCZ3');
+</script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:#f7f7f7;
+
+color:#333;
+
+line-height:1.6;
+
+}
+
+/* MENU */
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+background:rgba(0,0,0,.75);
+
+backdrop-filter:blur(10px);
+
+z-index:999;
+
+}
+
+nav{
+
+max-width:1200px;
+
+margin:auto;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:15px 30px;
+
+}
+
+.logo{
+
+height:70px;
+
+}
+
+.menu{
+
+display:flex;
+
+gap:35px;
+
+}
+
+.menu a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+.menu a:hover{
+
+color:#00aaff;
+
+}
+
+/* BANNER */
+
+.hero{
+
+height:100vh;
+
+background:url("banner.jpg") center center/cover;
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.65);
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+color:white;
+
+padding:20px;
+
+max-width:850px;
+
+}
+
+.hero h1{
+
+font-size:60px;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:22px;
+
+margin-bottom:35px;
+
+}
+
+.btn{
+
+display:inline-block;
+
+padding:16px 40px;
+
+background:#25D366;
+
+color:white;
+
+text-decoration:none;
+
+font-weight:bold;
+
+border-radius:40px;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+background:#1eb85a;
+
+transform:translateY(-3px);
+
+}
+
+/* SEÇÕES */
+
+section{
+
+padding:90px 8%;
+
+}
+
+section h2{
+
+text-align:center;
+
+font-size:38px;
+
+margin-bottom:50px;
+
+color:#222;
+
+}
+
+/* SOBRE */
+
+.sobre{
+
+max-width:1100px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+align-items:center;
+
+}
+
+.sobre img{
+
+width:100%;
+
+border-radius:15px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+.sobre p{
+
+font-size:18px;
+
+text-align:justify;
+
+}
+
+/* SERVIÇOS */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.card{
+
+background:white;
+
+padding:35px;
+
+border-radius:15px;
+
+text-align:center;
+
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.card i{
+
+font-size:55px;
+
+color:#00aaff;
+
+margin-bottom:20px;
+
+}
+
+.card h3{
+
+margin-bottom:15px;
+
+}
+
+/* GALERIA */
+
+.galeria{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:20px;
+
+}
+
+.galeria img{
+
+width:100%;
+
+height:320px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+transition:.4s;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.galeria img:hover{
+
+transform:scale(1.04);
+
+}
+
+/* DIFERENCIAIS */
+
+.diferenciais{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.item{
+
+background:white;
+
+padding:30px;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.item i{
+
+font-size:45px;
+
+color:#00aaff;
+
+margin-bottom:15px;
+
+}
+
+/* CONTATO */
+
+.contato{
+
+text-align:center;
+
+font-size:18px;
+
+}
+
+.contato p{
+
+margin:10px 0;
+
+}
+
+footer{
+
+background:#111;
+
+color:white;
+
+text-align:center;
+
+padding:40px;
+
+}
+
+/* BOTÕES */
+
+.floating-buttons{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+z-index:999;
+
+}
+
+.floating-buttons a{
+
+width:58px;
+
+height:58px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+color:white;
+
+font-size:24px;
+
+text-decoration:none;
+
+box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+}
+
+.whatsapp{
+
+background:#25D366;
+
+}
+
+.telefone{
+
+background:#444;
+
+}
+
+.instagram{
+
+background:#E4405F;
+
+}
+
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.sobre{
+
+grid-template-columns:1fr;
+
+}
+
+.menu{
+
+display:none;
+
+}
+
+}
+
+</style>
 
 </head>
 
@@ -26,39 +512,44 @@ content="Instalação de Câmeras, Alarmes, Interfones, Vídeo Porteiros e Contr
 
 <header>
 
-<div class="container">
-
-<img src="imagens/logo.png" class="logo">
-
 <nav>
 
+<img src="logo.png" class="logo">
+
+<div class="menu">
+
 <a href="#inicio">Início</a>
+
+<a href="#sobre">Sobre</a>
+
 <a href="#servicos">Serviços</a>
+
 <a href="#galeria">Galeria</a>
+
 <a href="#contato">Contato</a>
 
-</nav>
-
 </div>
+
+</nav>
 
 </header>
 
 <section class="hero" id="inicio">
 
-<div class="overlay">
+<div class="hero-content">
 
 <h1>Sua segurança começa aqui.</h1>
 
 <p>
 
-Instalação profissional de câmeras, alarmes,
-interfones, vídeo porteiros e controle de acesso.
+Instalação profissional de câmeras, alarmes, interfones,
+vídeo porteiros e controle de acesso para residências,
+empresas e condomínios.
 
 </p>
 
-<a
-class="botao"
-href="https://wa.me/55SEUNUMERO"
+<a class="btn"
+href="https://wa.me/5561991614382"
 target="_blank">
 
 Solicitar Orçamento
@@ -68,8 +559,49 @@ Solicitar Orçamento
 </div>
 
 </section>
+<section id="sobre">
 
-<section class="servicos" id="servicos">
+<h2>Sobre a Zona Segura</h2>
+
+<div class="sobre">
+
+<div>
+
+<img src="sobre.jpg" alt="Instalação de sistema de segurança">
+
+</div>
+
+<div>
+
+<p>
+
+A <strong>Zona Segura</strong> atua em Brasília oferecendo soluções completas em segurança eletrônica para residências, empresas e condomínios.
+
+</p>
+
+<br>
+
+<p>
+
+Realizamos projetos personalizados com equipamentos de alta qualidade, sempre buscando a melhor solução para cada cliente.
+
+</p>
+
+<br>
+
+<p>
+
+Nossa equipe trabalha com responsabilidade, organização e acabamento profissional, garantindo instalações seguras e duradouras.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="servicos">
 
 <h2>Nossos Serviços</h2>
 
@@ -77,13 +609,13 @@ Solicitar Orçamento
 
 <div class="card">
 
-<i class="fa-solid fa-video"></i>
+<i class="fas fa-video"></i>
 
-<h3>Câmeras de Segurança</h3>
+<h3>Instalação de Câmeras</h3>
 
 <p>
 
-Projetos completos para residências, empresas e condomínios.
+Projetos completos com câmeras analógicas e IP para residências, empresas e condomínios.
 
 </p>
 
@@ -91,13 +623,13 @@ Projetos completos para residências, empresas e condomínios.
 
 <div class="card">
 
-<i class="fa-solid fa-bell"></i>
+<i class="fas fa-bell"></i>
 
 <h3>Alarmes</h3>
 
 <p>
 
-Alarmes monitorados e sensores inteligentes.
+Instalação, configuração e manutenção de sistemas de alarme para proteção do seu patrimônio.
 
 </p>
 
@@ -105,27 +637,13 @@ Alarmes monitorados e sensores inteligentes.
 
 <div class="card">
 
-<i class="fa-solid fa-building-shield"></i>
-
-<h3>Controle de Acesso</h3>
-
-<p>
-
-Biometria, cartão, senha e reconhecimento facial.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fa-solid fa-door-open"></i>
+<i class="fas fa-door-open"></i>
 
 <h3>Interfones</h3>
 
 <p>
 
-Instalação e manutenção residencial e predial.
+Instalação e manutenção de interfones residenciais e coletivos.
 
 </p>
 
@@ -133,13 +651,27 @@ Instalação e manutenção residencial e predial.
 
 <div class="card">
 
-<i class="fa-solid fa-display"></i>
+<i class="fas fa-desktop"></i>
 
 <h3>Vídeo Porteiros</h3>
 
 <p>
 
-Mais segurança e praticidade para sua residência.
+Mais praticidade e segurança para controlar quem entra no seu imóvel.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-fingerprint"></i>
+
+<h3>Controle de Acesso</h3>
+
+<p>
+
+Sistemas com senha, cartão, biometria e reconhecimento facial.
 
 </p>
 
@@ -149,70 +681,172 @@ Mais segurança e praticidade para sua residência.
 
 </section>
 
-<section class="galeria" id="galeria">
+<section id="galeria">
 
-<div class="grid">
+<h2>Alguns de nossos serviços</h2>
 
-<img src="imagens/camera1.jpg">
+<div class="galeria">
 
-<img src="imagens/camera2.jpg">
+<img src="foto1.jpg" alt="Instalação de câmeras">
 
-<img src="imagens/alarme.jpg">
+<img src="foto2.jpg" alt="Instalação de alarme">
 
-<img src="imagens/interfone.jpg">
+<img src="foto3.jpg" alt="Controle de acesso">
 
-<img src="imagens/controle.jpg">
+<img src="foto4.jpg" alt="Vídeo porteiro">
 
-<img src="imagens/banner.jpg">
+<img src="foto5.jpg" alt="Instalação residencial">
+
+<img src="foto6.jpg" alt="Instalação empresarial">
+
+</div>
+
+</section>
+<section id="diferenciais">
+
+<h2>Por que escolher a Zona Segura</h2>
+
+<div class="diferenciais">
+
+<div class="item">
+<i class="fas fa-user-check"></i>
+<h3>Atendimento Especializado</h3>
+<p>Equipe qualificada para projetar e instalar sistemas de segurança com qualidade e eficiência.</p>
+</div>
+
+<div class="item">
+<i class="fas fa-shield-alt"></i>
+<h3>Equipamentos de Qualidade</h3>
+<p>Trabalhamos com equipamentos modernos para garantir segurança, estabilidade e excelente desempenho.</p>
+</div>
+
+<div class="item">
+<i class="fas fa-clock"></i>
+<h3>Agilidade</h3>
+<p>Instalações organizadas e dentro do prazo, reduzindo transtornos e entregando um serviço de alto padrão.</p>
+</div>
+
+<div class="item">
+<i class="fas fa-tools"></i>
+<h3>Manutenção</h3>
+<p>Também realizamos manutenção preventiva e corretiva em sistemas já instalados.</p>
+</div>
 
 </div>
 
 </section>
 
-<section class="cta">
+<section id="contato">
 
-<h2>
+<h2>Contato</h2>
 
-Proteja seu patrimônio com quem entende de segurança.
+<div class="contato">
 
-</h2>
+<p><strong>Telefone:</strong> (61) 99161-4382</p>
 
-<a
-href="https://wa.me/55SEUNUMERO"
-target="_blank"
-class="botao">
+<p><strong>E-mail:</strong> zonasegurasistemas@gmail.com</p>
 
-Falar pelo WhatsApp
+<p><strong>Brasília - Distrito Federal</strong></p>
+
+<br>
+
+<a class="btn"
+href="https://wa.me/5561991614382"
+target="_blank">
+
+Solicitar Orçamento pelo WhatsApp
 
 </a>
 
+</div>
+
 </section>
 
-<footer id="contato">
+<footer>
 
 <h3>Zona Segura</h3>
 
+<br>
+
 <p>
 
-Instalação de Sistemas de Segurança
+Instalação de Câmeras • Alarmes • Interfones • Vídeo Porteiros • Controle de Acesso
 
 </p>
 
-<p>
-
-Câmeras • Alarmes • Interfones • Vídeo Porteiros • Controle de Acesso
-
-</p>
+<br>
 
 <p>
 
-© 2025 Zona Segura
+© 2025 Zona Segura - Todos os direitos reservados.
 
 </p>
 
 </footer>
 
-<script src="script.js"></script>
+<div class="floating-buttons">
+
+<a href="tel:+5561991614382" class="telefone">
+
+<i class="fas fa-phone"></i>
+
+</a>
+
+<a href="https://wa.me/5561991614382"
+class="whatsapp"
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<a href="https://www.instagram.com/zonaseguraa/"
+class="instagram"
+target="_blank">
+
+<i class="fab fa-instagram"></i>
+
+</a>
+
+</div>
+
+<script>
+
+const sections=document.querySelectorAll("section");
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.animate([
+
+{opacity:0,transform:"translateY(40px)"},
+
+{opacity:1,transform:"translateY(0)"}
+
+],{
+
+duration:700,
+
+fill:"forwards"
+
+});
+
+}
+
+});
+
+});
+
+sections.forEach(section=>{
+
+observer.observe(section);
+
+});
+
+</script>
 
 </body>
 
